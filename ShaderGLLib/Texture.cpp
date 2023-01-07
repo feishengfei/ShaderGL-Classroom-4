@@ -1,4 +1,5 @@
 #include "Texture.h"
+#include <stdexcept>
 #include <algorithm>
 #include <functional>
 #include <GL/glew.h>

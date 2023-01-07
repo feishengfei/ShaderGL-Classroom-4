@@ -9,7 +9,7 @@ project(ShaderGL)
 
 find_package(SDL2 CONFIG REQUIRED)
 find_package(GLEW REQUIRED)
-find_package(glm CONFIG REQUIRED)
+find_package(glm REQUIRED)
 find_package(GTest CONFIG REQUIRED)
 
 add_library(ShaderGLLib
@@ -49,8 +49,9 @@ add_library(ShaderGLLib
 target_link_libraries(ShaderGLLib 
   PRIVATE
     SDL2::SDL2
-    GLEW::GLEW
-    glm
+    GLEW
+    glm::glm
+    GL
 )
 
 add_executable(ShaderGLTest
@@ -100,7 +101,7 @@ target_link_libraries(ShaderGLTest
     GTest::gtest_main
     SDL2::SDL2
     GLEW::GLEW
-    glm
+    glm::glm
 )
 
 add_executable(JapaneseFlag
@@ -123,7 +124,7 @@ target_link_libraries(JapaneseFlag
   PRIVATE
     SDL2::SDL2
     GLEW::GLEW
-    glm
+    glm::glm
 )
 
 add_executable(RayMarching
@@ -146,7 +147,7 @@ target_link_libraries(RayMarching
   PRIVATE
     SDL2::SDL2
     GLEW::GLEW
-    glm
+    glm::glm
 )
 
 add_executable(Simple
@@ -171,7 +172,7 @@ target_link_libraries(Simple
   PRIVATE
     SDL2::SDL2
     GLEW::GLEW
-    glm
+    glm::glm
 )
 
 add_executable(PhysicallyBasedRendering
@@ -204,5 +205,5 @@ target_link_libraries(PhysicallyBasedRendering
   PRIVATE
     SDL2::SDL2
     GLEW::GLEW
-    glm
+    glm::glm
 )
